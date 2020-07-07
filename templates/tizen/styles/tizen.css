@@ -116,3 +116,7 @@ dl.attribute-list dd {
   padding-right: 6px;
   vertical-align: bottom;
 }
+
+.stack {
+  margin-top: 20px;
+}
