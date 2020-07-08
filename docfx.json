@@ -54,70 +54,70 @@
   "build": {
     "content": [
       {
-        "version": "8",
+        "version": "API8",
         "files": [ "**/*.yml" ],
         "src": "obj/API8",
         "dest": "API8",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "8",
+        "version": "API8",
         "files": [ "**/*.{yml,md}" ],
         "src": "specs/API8",
         "dest": "API8",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "7",
+        "version": "API7",
         "files": [ "**/*.yml" ],
         "src": "obj/API7",
         "dest": "API7",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "7",
+        "version": "API7",
         "files": [ "**/*.{yml,md}" ],
         "src": "specs/API7",
         "dest": "API7",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "6",
+        "version": "API6",
         "files": [ "**/*.yml" ],
         "src": "obj/API6",
         "dest": "API6",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "6",
+        "version": "API6",
         "files": [ "**/*.{yml,md}" ],
         "src": "specs/API6",
         "dest": "API6",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "5",
+        "version": "API5",
         "files": [ "**/*.yml" ],
         "src": "obj/API5",
         "dest": "API5",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "5",
+        "version": "API5",
         "files": [ "**/*.{yml,md}" ],
         "src": "specs/API5",
         "dest": "API5",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "4",
+        "version": "API4",
         "files": [ "**/*.yml" ],
         "src": "obj/API4",
         "dest": "API4",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "4",
+        "version": "API4",
         "files": [ "**/*.{yml,md}" ],
         "src": "specs/API4",
         "dest": "API4",
@@ -129,27 +129,27 @@
     ],
     "overwrite": [
       {
-        "version": "8",
+        "version": "API8",
         "files": "*/doc/api/**.md",
         "src": "repos/API8/src"
       },
       {
-        "version": "7",
+        "version": "API7",
         "files": "*/doc/api/**.md",
         "src": "repos/API7/src"
       },
       {
-        "version": "6",
+        "version": "API6",
         "files": "*/doc/api/**.md",
         "src": "repos/API6/src"
       },
       {
-        "version": "5",
+        "version": "API5",
         "files": "*/doc/api/**.md",
         "src": "repos/API5/src"
       },
       {
-        "version": "4",
+        "version": "API4",
         "files": "*/doc/api/**.md",
         "src": "repos/API4/src"
       },

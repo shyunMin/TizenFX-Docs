@@ -1,6 +1,6 @@
 # YamlMime:TableOfContent
 - name: API Reference
-  topicHref: API8/api/
+  topicHref: stable/api/
 - name: Guides
   topicHref: https://developer.tizen.org/development/guides-0
 - name: Samples

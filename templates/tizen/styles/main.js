@@ -1,10 +1,10 @@
 $(function () {
   var monikers = {
-    "8": "API Level 8 / Tizen 6.0",
-    "7": "API Level 7 / Tizen 5.5 M3",
-    "6": "API Level 6 / Tizen 5.5 M2",
-    "5": "API Level 5 / Tizen 5.0",
-    "4": "API Level 4 / Tizen 4.0",
+    "API8": "API Level 8 / Tizen 6.0",
+    "API7": "API Level 7 / Tizen 5.5 M3",
+    "API6": "API Level 6 / Tizen 5.5 M2",
+    "API5": "API Level 5 / Tizen 5.0",
+    "API4": "API Level 4 / Tizen 4.0",
   };
 
   var version = $('meta[name="version"]').attr('content');
@@ -28,7 +28,7 @@ $(function () {
 
   function registerMonikerChangedEvent(obj) {
     obj.change(function(event) {
-      window.location.href = '/API' + event.target.value + '/api/';
+      window.location.href = '/' + event.target.value + '/api/';
     });
   }
 
