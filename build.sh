@@ -100,8 +100,9 @@ build_index() {
 
 build_full() {
   clone_repos
-  restore_repos 
-  command docfx $SCRIPT_DIR/docfx.json
+  restore_repos
+  generate_metadata
+  build_docs || echo "Ignore errors..."
   build_index
   generate_symlinks
 }
