@@ -11,8 +11,8 @@ The following table specifies the API Level supported by each version of the Tiz
 
 | API Level | Target Framework | Target Platform | NuGet |
 |:---:|:---:|:---:|:---:|
-| [API Level 8](/API8/) | tizen80 | Tizen vNext  | |
-| [API Level 7](/API7/) | tizen70 | Tizen 5.5 M3 | |
-| [API Level 6](/API6/) | tizen60 | Tizen 5.5 M2 | [![api6_nuget](https://img.shields.io/nuget/v/Tizen.NET.API6.svg)](https://www.nuget.org/packages/Tizen.NET/) |
-| [API Level 5](/API5/) | tizen50 | Tizen 5.0 M2 | [![api5_nuget](https://img.shields.io/nuget/v/Tizen.NET.API5.svg)](https://www.nuget.org/packages/Tizen.NET/) |
-| [API Level 4](/API4/) | tizen40 | Tizen 4.0 M2 | [![api4_nuget](https://img.shields.io/nuget/v/Tizen.NET.API4.svg)](https://www.nuget.org/packages/Tizen.NET/) |
+| [API Level 8](./API8/) | tizen80 | Tizen vNext  | |
+| [API Level 7](./API7/) | tizen70 | Tizen 5.5 M3 | |
+| [API Level 6](./API6/) | tizen60 | Tizen 5.5 M2 | [![api6_nuget](https://img.shields.io/nuget/v/Tizen.NET.API6.svg)](https://www.nuget.org/packages/Tizen.NET/) |
+| [API Level 5](./API5/) | tizen50 | Tizen 5.0 M2 | [![api5_nuget](https://img.shields.io/nuget/v/Tizen.NET.API5.svg)](https://www.nuget.org/packages/Tizen.NET/) |
+| [API Level 4](./API4/) | tizen40 | Tizen 4.0 M2 | [![api4_nuget](https://img.shields.io/nuget/v/Tizen.NET.API4.svg)](https://www.nuget.org/packages/Tizen.NET/) |
