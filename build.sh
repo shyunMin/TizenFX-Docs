@@ -100,9 +100,8 @@ build_index() {
 
 build_full() {
   clone_repos
-  restore_repos
-  generate_metadata
-  build_docs
+  restore_repos 
+  command docfx $SCRIPT_DIR/docfx.json
   build_index
   generate_symlinks
 }
