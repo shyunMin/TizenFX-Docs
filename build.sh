@@ -108,13 +108,14 @@ build_full() {
 }
 
 clean() {
-  rm -fr $OBJ_DIR
+  rm -fr $OBJ_DIR/.cache
   rm -fr $SITE_DIR
 }
 
 purge() {
   clean
-  rm -fr $SCRIPT_DIR/repos
+  rm -fr $OBJ_DIR
+  rm -fr $REPO_DIR
 }
 
 CMD=$1
