@@ -14,6 +14,9 @@
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
 <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
+{{#obsolete}}
+<div class="markdown obsolete" data-id="{{id}}">{{{obsolete}}}</div>
+{{/obsolete}}
 <div class="markdown level1 summary">{{{summary}}}</div>
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>
 <h5 class="decalaration">{{__global.declaration}}</h5>
@@ -203,6 +206,8 @@
 {{#postcondition}}
 <h6><strong>{{__global.postcondition}}</strong>: {{{postcondition}}}</h6>
 {{/postcondition}}
+
+<div style="margin-bottom: 15px"></div>
 
 {{/children}}
 {{/children}}
