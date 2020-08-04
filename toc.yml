@@ -2,7 +2,7 @@
 - name: API Reference
   topicHref: stable/api/
 - name: Guides
-  topicHref: https://developer.tizen.org/development/guides-0
+  topicHref: https://docs.tizen.org/application/dotnet/
 - name: Samples
   topicHref: https://github.com/Samsung/Tizen-CSharp-Samples/
 - name: Github
