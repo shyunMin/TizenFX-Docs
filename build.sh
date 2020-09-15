@@ -61,6 +61,9 @@ restore_repos() {
       if [ ! -f $TEMP_SLN_FILE ]; then
         dotnet new sln -n $TEMP_SLN_NAME
         dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
+        if [ -d internals/src ]; then
+          dotnet sln $TEMP_SLN_FILE add internals/src/**/*.csproj
+        fi
       fi
       dotnet restore $TEMP_SLN_FILE
       popd
