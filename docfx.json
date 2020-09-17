@@ -143,7 +143,7 @@
       {
         "version": "internals",
         "files": [ "**/*.{yml,md}" ],
-        "src": "specs/internals",
+        "src": "repos/API8/internals/docs",
         "dest": "internals",
         "rootTocPath": "toc.html"
       },
