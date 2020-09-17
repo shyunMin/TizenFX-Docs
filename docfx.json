@@ -49,6 +49,16 @@
         }
       ],
       "dest": "obj/API4/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API8/internals/src"
+        }
+      ],
+      "dest": "obj/internals/api"
     }
   ],
   "build": {
@@ -124,6 +134,20 @@
         "rootTocPath": "toc.html"
       },
       {
+        "version": "internals",
+        "files": [ "**/*.yml" ],
+        "src": "obj/internals",
+        "dest": "internals",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "internals",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/internals",
+        "dest": "internals",
+        "rootTocPath": "toc.html"
+      },
+      {
         "files": [ "*.yml", "*.md" ]
       }
     ],
@@ -153,6 +177,11 @@
         "files": "*/doc/api/**.md",
         "src": "repos/API4/src"
       },
+      {
+        "version": "internals",
+        "files": "*/doc/api/**.md",
+        "src": "repos/internals/src"
+      }
     ],
     "resource": [
       {
