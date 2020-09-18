@@ -35,7 +35,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/internals/src"
+        "src": "repos/API8/internals/src"
       }
     ],
     "resource": [
