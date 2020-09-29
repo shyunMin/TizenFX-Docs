@@ -28,7 +28,7 @@
         "rootTocPath": "toc.html"
       },
       {
-        "files": [ "*.yml", "*.md" ]
+        "files": [ "toc.yml", "index.md" ]
       }
     ],
     "overwrite": [
