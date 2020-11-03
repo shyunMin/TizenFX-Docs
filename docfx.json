@@ -5,6 +5,16 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API9/src"
+        }
+      ],
+      "dest": "obj/API9/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
           "src": "repos/API8/src"
         }
       ],
@@ -63,6 +73,13 @@
   ],
   "build": {
     "content": [
+      {
+        "version": "API9",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API9",
+        "dest": "API9",
+        "rootTocPath": "toc.html"
+      },
       {
         "version": "API8",
         "files": [ "**/*.yml" ],
@@ -152,6 +169,11 @@
       }
     ],
     "overwrite": [
+      {
+        "version": "API9",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API9/src"
+      },
       {
         "version": "API8",
         "files": "*/doc/api/**.md",
