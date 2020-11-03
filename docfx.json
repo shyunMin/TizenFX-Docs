@@ -81,6 +81,13 @@
         "rootTocPath": "toc.html"
       },
       {
+        "version": "API9",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API9",
+        "dest": "API9",
+        "rootTocPath": "toc.html"
+      },
+      {
         "version": "API8",
         "files": [ "**/*.yml" ],
         "src": "obj/API8",
