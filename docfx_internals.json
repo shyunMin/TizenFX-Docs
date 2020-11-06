@@ -5,7 +5,7 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API8/internals/src"
+          "src": "repos/API9/internals/src"
         }
       ],
       "dest": "obj/internals/api"
@@ -23,7 +23,7 @@
       {
         "version": "internals",
         "files": [ "**/*.{yml,md}" ],
-        "src": "repos/API8/internals/docs",
+        "src": "repos/API9/internals/docs",
         "dest": "internals",
         "rootTocPath": "toc.html"
       },
@@ -35,7 +35,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API8/internals/src"
+        "src": "repos/API9/internals/src"
       }
     ],
     "resource": [
