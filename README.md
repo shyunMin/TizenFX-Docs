@@ -25,4 +25,4 @@ $ DOCFX_FILE=docfx_docs.tizen.org.json ./build.sh
 ## Serve local built documents
 ```
 $ docfx serve _site
-``
+```
