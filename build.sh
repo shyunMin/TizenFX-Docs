@@ -10,6 +10,10 @@ REPO_DIR="$SCRIPT_DIR/repos"
 OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
 
+if [ -z "$DOCFX_FILE" ]; then
+  DOCFX_FILE=$SCRIPT_DIR/docfx.json
+fi
+
 branchname() {
   local version=$1
   local branchvar="BRANCH_$version"
@@ -75,11 +79,11 @@ restore_repos() {
 }
 
 generate_metadata() {
-  docfx metadata $SCRIPT_DIR/docfx.json
+  docfx metadata $DOCFX_FILE
 }
 
 build_docs() {
-  docfx build $SCRIPT_DIR/docfx.json
+  docfx build $DOCFX_FILE
 }
 
 generate_symlinks() {
