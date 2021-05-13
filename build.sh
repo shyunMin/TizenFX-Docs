@@ -13,6 +13,7 @@ SITE_DIR="$SCRIPT_DIR/_site"
 if [ -z "$DOCFX_FILE" ]; then
   DOCFX_FILE=$SCRIPT_DIR/docfx.json
 fi
+COMMIT_HASH_FILE=$REPO_DIR/commits
 
 branchname() {
   local version=$1
@@ -38,6 +39,8 @@ clone_repos() {
     mkdir -p $REPO_DIR
   fi
 
+  rm -f $COMMIT_HASH_FILE
+
   for v in $VERSIONS; do
     echo "Retrieving $v ..."
     local branch=$(branchname $v)
@@ -51,6 +54,9 @@ clone_repos() {
       git clone $GIT_URL --branch $branch --single-branch --depth 1 $v
       popd
     fi
+
+    commit=$(git --git-dir=$REPO_DIR/$v/.git rev-parse HEAD)
+    echo "$v:$commit" >> $COMMIT_HASH_FILE
   done
 }
 
@@ -84,6 +90,7 @@ generate_metadata() {
 
 build_docs() {
   docfx build $DOCFX_FILE
+  cp -f $COMMIT_HASH_FILE $SITE_DIR
 }
 
 generate_symlinks() {
