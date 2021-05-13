@@ -84,16 +84,12 @@ restore_repos() {
   done
 }
 
-generate_metadata() {
-  docfx metadata $DOCFX_FILE
-}
-
 build_docs() {
-  docfx build $DOCFX_FILE
+  docfx metadata $DOCFX_FILE
+  docfx build $DOCFX_FILE || echo "Ignore errors..."
   cp -f $COMMIT_HASH_FILE $SITE_DIR
-}
 
-generate_symlinks() {
+  # generate symlinks
   pushd $SITE_DIR
   rm -f stable latest devel master
   ln -s $STABLE stable
@@ -115,10 +111,8 @@ build_index() {
 build_full() {
   clone_repos
   restore_repos
-  generate_metadata
-  build_docs || echo "Ignore errors..."
+  build_docs
   build_index
-  generate_symlinks
 }
 
 clean() {
@@ -136,9 +130,7 @@ CMD=$1
 case "$CMD" in
   clone) clone_repos ;;
   restore) restore_repos ;;
-  metadata) generate_metadata ;;
   build) build_docs ;;
-  symlinks) generate_symlinks ;;
   index) build_index ;;
   clean) clean ;;
   purge) purge ;;
