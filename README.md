@@ -18,7 +18,7 @@ $ ./build.sh
 $ DOCFX_FILE=docfx_internals.json ./build.sh
 
 # Build documents for docs.tizen.org
-$ DOCFX_FILE=docfx_docs.tizen.org.json ./build.sh
+$ DOCFX_FILE=docfx_tizen_docs.json ./build.sh
 
 ```
 

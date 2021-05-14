@@ -206,7 +206,7 @@
     "dest": "_site",
     "template": [
       "default",
-      "./templates/docs.tizen.org"
+      "./templates/tizen_docs"
     ],
     "globalMetadata": {
         "_appLogoPath" : "images/tizen_logo.png",
