@@ -92,7 +92,7 @@ build_docs() {
 
   # generate symlinks
   pushd $SITE_DIR
-  rm -f stable latest devel master
+  rm -fr stable latest devel master
   ln -s $STABLE stable
   ln -s stable latest
   for v in $VERSIONS; do
