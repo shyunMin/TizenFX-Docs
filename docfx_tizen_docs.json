@@ -5,6 +5,16 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API11/src"
+        }
+      ],
+      "dest": "obj/API11/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
           "src": "repos/API10/src"
         }
       ],
@@ -83,6 +93,18 @@
   ],
   "build": {
     "content": [
+      {
+        "version": "API11",
+        "files": [ "**/*.yml" ],
+        "src": "obj/API11",
+        "dest": "API11"
+      },
+      {
+        "version": "API11",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "specs/API11",
+        "dest": "API11"
+      },
       {
         "version": "API10",
         "files": [ "**/*.yml" ],
@@ -184,6 +206,11 @@
       }
     ],
     "overwrite": [
+      {
+        "version": "API11",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API11/src"
+      },
       {
         "version": "API10",
         "files": "*/doc/api/**.md",
