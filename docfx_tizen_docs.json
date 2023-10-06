@@ -95,7 +95,7 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API9/internals/src"
+          "src": "repos/API12/internals/src"
         }
       ],
       "dest": "obj/internals/api"
@@ -220,7 +220,7 @@
       {
         "version": "internals",
         "files": [ "**/*.{yml,md}" ],
-        "src": "repos/API9/internals/docs",
+        "src": "repos/API12/internals/docs",
         "dest": "internals"
       },
       {
@@ -276,7 +276,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API9/internals/src"
+        "src": "repos/API12/internals/src"
       }
     ],
     "resource": [
