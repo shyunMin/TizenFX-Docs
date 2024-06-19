@@ -11,7 +11,7 @@ OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$SCRIPT_DIR/docfx.json
+  DOCFX_FILE=$SCRIPT_DIR/docfx_latest.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
