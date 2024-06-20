@@ -19,6 +19,16 @@
         }
       ],
       "dest": "obj/API11/api"
+    },
+    {
+      "src": [
+        {
+          "files": [ "*/*.csproj" ],
+          "exclude": [ "**/obj/**", "**/bin/**" ],
+          "src": "repos/API12/internals/src"
+        }
+      ],
+      "dest": "obj/internals/api"
     }
   ],
   "build": {
@@ -50,6 +60,23 @@
         "src": "specs/API11",
         "dest": "API11",
         "rootTocPath": "toc.html"
+      },
+      {
+        "version": "internals",
+        "files": [ "**/*.yml" ],
+        "src": "obj/internals",
+        "dest": "internals",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "version": "internals",
+        "files": [ "**/*.{yml,md}" ],
+        "src": "repos/API12/internals/docs",
+        "dest": "internals",
+        "rootTocPath": "toc.html"
+      },
+      {
+        "files": [ "toc.yml", "index.md" ]
       }
     ],
     "overwrite": [
@@ -62,6 +89,11 @@
         "version": "API11",
         "files": "*/doc/api/**.md",
         "src": "repos/API11/src"
+      },
+      {
+        "version": "internals",
+        "files": "*/doc/api/**.md",
+        "src": "repos/API12/internals/src"
       }
     ],
     "resource": [

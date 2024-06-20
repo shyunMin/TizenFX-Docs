@@ -5,36 +5,26 @@
         {
           "files": [ "*/*.csproj" ],
           "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API12/src"
+          "src": "repos/API11/src"
         }
       ],
-      "dest": "obj/API12/api"
-    },
-    {
-      "src": [
-        {
-          "files": [ "*/*.csproj" ],
-          "exclude": [ "**/obj/**", "**/bin/**" ],
-          "src": "repos/API12/internals/src"
-        }
-      ],
-      "dest": "obj/internals/api"
+      "dest": "obj/API11/api"
     }
   ],
   "build": {
     "content": [
       {
-        "version": "API12",
+        "version": "API11",
         "files": [ "**/*.yml" ],
-        "src": "obj/API12",
-        "dest": "API12",
+        "src": "obj/API11",
+        "dest": "API11",
         "rootTocPath": "toc.html"
       },
       {
-        "version": "internals",
+        "version": "API11",
         "files": [ "**/*.{yml,md}" ],
-        "src": "repos/API12/internals/docs",
-        "dest": "internals",
+        "src": "specs/API11",
+        "dest": "API11",
         "rootTocPath": "toc.html"
       },
       {
@@ -43,14 +33,9 @@
     ],
     "overwrite": [
       {
-        "version": "API12",
+        "version": "API11",
         "files": "*/doc/api/**.md",
-        "src": "repos/API12/src"
-      },
-      {
-        "version": "internals",
-        "files": "*/doc/api/**.md",
-        "src": "repos/API12/internals/src"
+        "src": "repos/API11/src"
       }
     ],
     "resource": [

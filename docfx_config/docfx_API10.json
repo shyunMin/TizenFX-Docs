@@ -36,11 +36,6 @@
         "version": "API10",
         "files": "*/doc/api/**.md",
         "src": "repos/API10/src"
-      },
-      {
-        "version": "internals",
-        "files": "*/doc/api/**.md",
-        "src": "repos/API12/internals/src"
       }
     ],
     "resource": [
