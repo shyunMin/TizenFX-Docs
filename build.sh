@@ -1,7 +1,8 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API6 API7 API8 API9 API10 API11 API12"
+#VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12"
+VERSION=$2
 BRANCH_API12=master
 STABLE="API11"
 
@@ -11,16 +12,16 @@ OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$SCRIPT_DIR/docfx.json
+  DOCFX_FILE=$SCRIPT_DIR/docfx_$VERSION.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
 branchname() {
   local version=$1
-  local branchvar="BRANCH_$version"
+  local branchvar="BRANCH_$VERSION"
   local branch=${!branchvar}
   if [ -z "$branch" ]; then
-    echo $version
+    echo $VERSION
   else
     echo $branch
   fi
@@ -41,47 +42,43 @@ clone_repos() {
 
   rm -f $COMMIT_HASH_FILE
 
-  for v in $VERSIONS; do
-    echo "Retrieving $v ..."
-    local branch=$(branchname $v)
-    if [ -d "$REPO_DIR/$v/.git" ]; then
-      pushd $REPO_DIR/$v
-      git fetch origin
-      git reset --hard origin/$branch
-      popd
-    else
-      pushd $REPO_DIR
-      git clone $GIT_URL --branch $branch --single-branch --depth 1 $v
-      popd
-    fi
+  echo "Retrieving $VERSION ..."
+  local branch=$(branchname $VERSION)
+  if [ -d "$REPO_DIR/$VERSION/.git" ]; then
+    pushd $REPO_DIR/$VERSION
+    git fetch origin
+    git reset --hard origin/$branch
+    popd
+  else
+    pushd $REPO_DIR
+    git clone $GIT_URL --branch $branch --single-branch --depth 1 $VERSION
+    popd
+  fi
 
-    commit=$(git --git-dir=$REPO_DIR/$v/.git rev-parse HEAD)
-    echo "$v:$commit" >> $COMMIT_HASH_FILE
-  done
+  commit=$(git --git-dir=$REPO_DIR/$VERSION/.git rev-parse HEAD)
+  echo "$VERSION:$commit" >> $COMMIT_HASH_FILE
 }
 
 TEMP_SLN_NAME="_tizenfx_public"
 TEMP_SLN_FILE="$TEMP_SLN_NAME.sln"
 
 restore_repos() {
-  for v in $VERSIONS; do
-    echo "Restoring $v ..."
-    if [ -d "$REPO_DIR/$v" ]; then
-      pushd $REPO_DIR/$v
-      if [ ! -f $TEMP_SLN_FILE ]; then
-        dotnet new sln -n $TEMP_SLN_NAME
-        dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
-        if [ -d internals/src ]; then
-          dotnet sln $TEMP_SLN_FILE add internals/src/**/*.csproj
-        fi
+  echo "Restoring $VERSION ..."
+  if [ -d "$REPO_DIR/$VERSION" ]; then
+    pushd $REPO_DIR/$VERSION
+    if [ ! -f $TEMP_SLN_FILE ]; then
+      dotnet new sln -n $TEMP_SLN_NAME
+      dotnet sln $TEMP_SLN_FILE add src/**/*.csproj
+      if [ -d internals/src ]; then
+        dotnet sln $TEMP_SLN_FILE add internals/src/**/*.csproj
       fi
-      dotnet restore $TEMP_SLN_FILE
-      popd
-    else
-      echo "No repository to restore : [$v]"
-      exit 1
     fi
-  done
+    dotnet restore $TEMP_SLN_FILE
+    popd
+  else
+    echo "No repository to restore : [$VERSION]"
+    exit 1
+  fi
 }
 
 build_docs() {
@@ -95,12 +92,12 @@ build_docs() {
   rm -fr stable latest devel master
   ln -s $STABLE stable
   ln -s stable latest
-  for v in $VERSIONS; do
-    local branch=$(branchname $v)
-    if [[ $branch != $v ]]; then
-      ln -s $v $branch
-    fi
-  done
+
+  local branch=$(branchname $VERSION)
+  if [[ $branch != $VERSION ]]; then
+    ln -s $VERSION $branch
+  fi
+
   ln -s master devel
   popd
 }
