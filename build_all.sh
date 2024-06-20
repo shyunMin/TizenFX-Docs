@@ -1,8 +1,8 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API4 API5 API6 API7 API8 API9 API10"
-BRANCH_API12=master
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11"
+BRANCH_API11=master
 STABLE="API10"
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
@@ -11,7 +11,7 @@ OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$SCRIPT_DIR/docfx_legacy.json
+  DOCFX_FILE=$SCRIPT_DIR/docfx.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
@@ -138,4 +138,3 @@ case "$CMD" in
   "") build_full ;;
   *) echo "invalid arguments" && exit 1 ;;
 esac
-

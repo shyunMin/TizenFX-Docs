@@ -4,7 +4,7 @@ SCRIPT_DIR=$(dirname $(readlink -f $0))
 #VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12"
 VERSION=$2
 BRANCH_API12=master
-STABLE="API11"
+STABLE=$2
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
@@ -17,7 +17,6 @@ fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
 branchname() {
-  local version=$1
   local branchvar="BRANCH_$VERSION"
   local branch=${!branchvar}
   if [ -z "$branch" ]; then
@@ -43,7 +42,7 @@ clone_repos() {
   rm -f $COMMIT_HASH_FILE
 
   echo "Retrieving $VERSION ..."
-  local branch=$(branchname $VERSION)
+  local branch=$(branchname)
   if [ -d "$REPO_DIR/$VERSION/.git" ]; then
     pushd $REPO_DIR/$VERSION
     git fetch origin
@@ -93,7 +92,7 @@ build_docs() {
   ln -s $STABLE stable
   ln -s stable latest
 
-  local branch=$(branchname $VERSION)
+  local branch=$(branchname)
   if [[ $branch != $VERSION ]]; then
     ln -s $VERSION $branch
   fi

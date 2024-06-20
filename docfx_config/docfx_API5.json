@@ -40,7 +40,7 @@
       {
         "version": "internals",
         "files": "*/doc/api/**.md",
-        "src": "repos/API12/internals/src"
+        "src": "repos/API5/internals/src"
       }
     ],
     "resource": [
