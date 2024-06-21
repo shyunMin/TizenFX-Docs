@@ -9,9 +9,10 @@ GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
 OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
+DOCFX_CONFIG_DIR="$SCRIPT_DIR/_site/docfx_config"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$SCRIPT_DIR/docfx.json
+  DOCFX_FILE=$DOCFX_CONFIG_DIR/docfx.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
