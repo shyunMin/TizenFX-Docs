@@ -17,10 +17,11 @@ fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
 branchname() {
-  local branchvar="BRANCH_$VERSIONS"
+  local VERSION=$1
+  local branchvar="BRANCH_$VERSION"
   local branch=${!branchvar}
   if [ -z "$branch" ]; then
-    echo $VERSIONS
+    echo $VERSION
   else
     echo $branch
   fi
