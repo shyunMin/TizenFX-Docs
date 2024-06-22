@@ -1,10 +1,9 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-#VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12"
-VERSION=$2
+VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12"
 BRANCH_API12=master
-STABLE=$2
+STABLE=API11
 
 GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
@@ -13,15 +12,15 @@ SITE_DIR="$SCRIPT_DIR/_site"
 DOCFX_CONFIG_DIR="$SCRIPT_DIR/_site/docfx_config"
 
 if [ -z "$DOCFX_FILE" ]; then
-  DOCFX_FILE=$DOCFX_CONFIG_DIR/docfx_$VERSION.json
+  DOCFX_FILE=$DOCFX_CONFIG_DIR/docfx.json
 fi
 COMMIT_HASH_FILE=$REPO_DIR/commits
 
 branchname() {
-  local branchvar="BRANCH_$VERSION"
+  local branchvar="BRANCH_$VERSIONS"
   local branch=${!branchvar}
   if [ -z "$branch" ]; then
-    echo $VERSION
+    echo $VERSIONS
   else
     echo $branch
   fi
