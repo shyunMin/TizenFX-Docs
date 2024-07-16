@@ -108,6 +108,7 @@ build_docs() {
 
 build_index() {
   command node $SCRIPT_DIR/build-index.js
+  rm $SITE_DIR/index-prebuilt.json
 }
 
 build_full() {
