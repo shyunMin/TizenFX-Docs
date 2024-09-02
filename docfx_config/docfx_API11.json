@@ -8,7 +8,7 @@
           "src": "repos/API11/src"
         }
       ],
-      "dest": "obj/API11/api"
+      "dest": "obj/API11/api",
       "filter": "filterConfig.yml"
     }
   ],
