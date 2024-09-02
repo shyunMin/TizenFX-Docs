@@ -9,6 +9,9 @@
         }
       ],
       "dest": "obj/API10/api",
+      "properties": {
+        "TargetFramework": "net6.0"
+      }
     }
   ],
   "build": {
