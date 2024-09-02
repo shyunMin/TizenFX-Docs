@@ -9,6 +9,7 @@
         }
       ],
       "dest": "obj/API11/api"
+	  "filter": "filterConfig.yml"
     }
   ],
   "build": {
