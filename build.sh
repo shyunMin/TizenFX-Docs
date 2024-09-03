@@ -1,7 +1,7 @@
 #!/bin/bash -e
 SCRIPT_DIR=$(dirname $(readlink -f $0))
 
-VERSIONS="API4 API5 API6 API7 API8 API9 API10 API11 API12"
+VERSIONS="API10 API11 API12"
 BRANCH_API12=master
 STABLE="API11"
 
@@ -9,7 +9,7 @@ GIT_URL="https://github.com/Samsung/TizenFX.git"
 REPO_DIR="$SCRIPT_DIR/repos"
 OBJ_DIR="$SCRIPT_DIR/obj"
 SITE_DIR="$SCRIPT_DIR/_site"
-DOCFX_CONFIG_DIR="$SCRIPT_DIR/_site/docfx_config"
+DOCFX_CONFIG_DIR="$SCRIPT_DIR/docfx_config"
 
 if [ -z "$DOCFX_FILE" ]; then
   DOCFX_FILE=$DOCFX_CONFIG_DIR/docfx.json
